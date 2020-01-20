@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "contato")
@@ -23,9 +24,11 @@ public class Contato implements Serializable {
 	private Long id;
 
 	@Column(name = "nome_contato")
+	@NotBlank(message = "Nome é um campo obrigatorio")
 	private String nome;
 
 	@Column(name = "valor")
+	@NotBlank(message = "valor é um campo obrigatorio")
 	private String valor;
 
 	@Column(name = "observacao")
